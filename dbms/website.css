@@ -1,0 +1,422 @@
+ #header{
+        
+        margin-left: auto;
+        width: 1400px;
+        height: 175px;
+        background-color: black;
+        opacity: 0.8;
+        z-index: 2;
+        position: absolute;
+    }
+    #background{
+        width: 99%;
+        height: 800px;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        z-index: -1; 
+    }
+
+    #head{
+        font-style: italic;
+        font-size: 45px;
+        color: darkblue;
+        width:60%;
+        z-index: 3;
+        
+    }
+    #submit{
+        position: relative;
+        margin-left: 38%;
+        padding-top:10px;
+        margin-top: 25px;
+        font-size: 20px;
+        padding-bottom: 10px;
+        color: white;
+        background-color: black;
+    }
+    #heading{
+        position: absolute;
+        margin-left: 170px;
+        margin-top: 30px;
+        color: white;
+        z-index: 12;
+
+    }
+#fruits{
+            padding-right: 60px;
+        }
+        #vegetables{
+            padding-right: 10px;
+        }
+#heading1{
+    z-index: 12;
+}
+#prevorders{
+    text-decoration: none;
+    font-style: italic;
+    color: skyblue;
+    font-size: 20px;
+    margin-top: 70px;
+}
+#text1{
+    
+    position: absolute;
+    margin-left: 950px;
+    font-size: 20px;
+    margin-top: 70px;
+    
+  
+    
+    padding-bottom: 10px;
+    
+    color: (255,255,255,1.0);
+        z-index: 12;
+}
+#button1{
+    
+    position: absolute;
+    margin-left: 1030px;
+    font-size: 20px;
+    margin-top:10px;
+    width: 200px;
+    text-align: center;
+    padding-bottom: 10px;
+    
+    color: (255,255,255,1.0);
+        z-index: 5;
+}
+    #heading2{
+        position: absolute;
+        margin-left: 170px;
+        margin-top: 80px;
+        color: white;
+        z-index: 3;
+        font-size: 8px;
+        font-style: italic;
+    }
+
+    #image1{
+        position: absolute;
+        margin-left:20px;
+        margin-top:20px;
+        z-index: 3;
+    }
+    #shop
+    {
+        position: absolute;
+        margin-left:18px;
+        margin-top:150px;
+        font-size: 16px;
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+
+    }
+    #items{
+        margin-top: 205px;
+
+        margin-bottom: 5px;
+        width: 1400px;
+        height: 1400px;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0);
+        background-color: white;
+        opacity: 0.8;
+        z-index: 1;
+        position: absolute;
+    }
+#items1{
+        margin-top: 212px;
+
+        margin-bottom: 5px;
+        width: 1400px;
+        height: 1400px;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0);
+        background-color: white;
+        opacity: 0.8;
+        z-index: 1;
+        position: absolute;
+    }
+.information2{
+        position: sticky;
+        width: 70%;
+      /*  float: none; */
+        font-weight: bold;
+        font-size: 20px;
+        
+        font-style: normal;
+        color:darkblue;
+        border: 1px;
+    }
+    .information1{
+        position: sticky;
+        width: 50%;
+        font-weight: bold;
+      /*  float: none; */
+        margin-left: 30%;
+        font-size: 30px;
+        margin-top: 10%; 
+        font-style: italic;
+        color:darkblue;
+        border: 1px;
+    }
+    .information{
+        position: sticky;
+        width: 40%;
+        font-weight: bold;
+      /*  float: none; */
+        margin-left: 30%;
+        font-size: 20px;
+        margin-top: 2%;
+        border: 1px;
+    }
+    #line2{
+        margin-top: 420px;
+        position: sticky;
+    }
+    #line3{
+        margin-top: 850px;
+        position: sticky;
+    }
+    #rid31{
+        margin-top: 400px;
+        margin-left: 175px;
+        
+        position: absolute;
+         z-index: 3;  
+    }
+    #rid32{
+        margin-top: 400px;
+        margin-left: 500px;
+        
+        position: absolute;
+         z-index: 3;  
+    }
+    #rid33{
+        margin-top: 400px;
+        margin-left: 805px;
+        
+        position: absolute;
+         z-index: 3;  
+    }
+    #rid34{
+        margin-top: 400px;
+       
+        margin-left: 1105px;
+        position: absolute;
+         z-index: 3;  
+    }
+    #rid21{
+        margin-top: 440px;
+        margin-left: 140px;
+        width:150px;
+        position: absolute;
+        font-size: 20px;
+        color: white;
+         
+        padding: 5px;
+        background-color: lightgreen;
+        text-decoration: none;
+        z-index: 3;
+
+    }
+    #rid22{
+        margin-top: 440px;
+        margin-left: 460px;
+        position: absolute;
+        font-size: 20px;
+        width:150px;
+        color: white;
+        padding: 5px;
+        background-color: lightgreen;
+        opacity: 1.0;
+        text-decoration: none;
+        z-index: 3;
+
+    }
+    #rid23{
+        margin-top: 440px;
+        margin-left: 770px;
+        position: absolute;
+        font-size: 20px;
+        color: white;
+        padding: 5px;
+         width:150px;
+        background-color: lightgreen;
+        text-decoration: none;
+        z-index: 3;
+
+    }
+    #rid24{
+        margin-top: 440px;
+        margin-left: 1070px;
+        position: absolute;
+        width:150px;
+        font-size: 20px;
+        color: white;
+        padding: 5px;
+        background-color: lightgreen;
+        text-decoration: none;
+        z-index: 3;
+
+    }
+
+     #rid11{
+        margin-top: 360px;
+        margin-left: 180px;
+        position: absolute;
+         z-index: 3;
+
+    }
+    #rid12{
+        margin-top: 360px;
+        margin-left: 480px;
+        position: absolute;
+         z-index: 3;
+
+    }
+    #rid13{
+        margin-top: 360px;
+        margin-left: 790px;
+        position: absolute;
+         z-index: 3;
+
+    }
+    #rid14{
+        margin-top: 360px;
+        margin-left: 1090px;
+        position: absolute;
+
+        z-index: 3;
+
+
+    }
+    #rid04{
+        margin-top: 100px;
+        margin-left: 1030px;
+        width: 210px;
+        height: 240px;
+        border: 5px;
+        position: absolute;
+        z-index: 5;
+        border: 2px solid green;
+
+    }
+    #rid03{
+        margin-top: 100px;
+        margin-left: 730px;
+        width: 210px;
+        height: 240px;
+        border: 5px;
+        position: absolute;
+        border: 2px solid green;
+
+    }
+
+    #rid02{
+        margin-top: 100px;
+        margin-left: 430px;
+        width: 210px;
+        height: 240px;
+        border: 5px;
+        position: absolute;
+        border: 2px solid green;
+
+    }
+    #rid01{
+        margin-top: 100px;
+        z-index: 5;
+        margin-left: 110px;
+        width: 210px;
+        height: 240px;
+        opacity: 1.0;
+        border: 2px solid green;
+        position: absolute;
+
+    }
+.topnav{
+    position: absolute;
+    background-color:black;
+    height: 29px;
+    padding: 5px;
+    text-decoration: none;
+    margin-top: 170px;
+    width: 1390px;
+    z-index: 10;
+    
+}
+.topnav a{
+    text-decoration: none;
+    font-size: 25px;
+    background-color: black;
+    padding-right: 50px;
+    padding-left:25px;
+    /*border-right: 2px solid gray;
+    border-top: 2px solid gray;*/
+    color: white;
+}
+.topnav a:hover{
+    text-decoration: none;
+    background-color: white;
+    opacity: 0%;
+    color: black;
+}
+
+
+#mail,#password,#First_name,#Last_name,#st_name,#st_number,#zip,#phone,#age{
+    height: 20px;
+    width: 300px;
+    border-color: black;
+    
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#login1{
+    position: relative;
+    width: 400px;
+    font-size: 20px;
+    border-color: black;
+}
+#login2{
+   position: relative;
+    width: 400px;
+    font-size: 20px;
+    border-color: black;
+}
+.loginbtn {
+    float: left;
+    font-size: 20px;
+    width: 25%;
+    border-color: black;
+}
+
+.container {
+   margin-left: 500px;
+   margin-top: 200px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+#home{
+    color: black;
+}
+
+
+/
+/* Add a red background color to navbar links on hover */
+

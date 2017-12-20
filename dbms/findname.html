@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Find the profession</title>
+</head>
+<body>
+<p id="txt">Output will appear here.</p>
+    Enter your number:<input type="number" id="number">
+    <button type="submit" id="button1" onclick="load()">Submit</button>
+<script>
+function load()
+    {
+var prof = ["mechanic", "cleaner", "driver", "cashier", "electrician"];
+        var number=document.getElementById("number");
+        var text="The answer is: ";
+        document.getElementById("txt").innerHTML=number.value;
+        if(number.value<=5)
+            {
+                for(i=0;i<=number.value-1;i++)
+                    {
+                        text=text+prof[i]+" ";
+
+                    }
+                document.getElementById("txt").innerHTML=text;
+            }
+    }
+</script>    
+</body>
+</html>

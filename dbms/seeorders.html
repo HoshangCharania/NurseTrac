@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PITT Grocery Store</title>
+    </head>
+<link rel="stylesheet" type="text/css" href="website.css">
+    <style>
+        #changepage{
+            margin-top: 580px;
+            margin-left: 650px;
+            position: absolute;
+            background-color:white;
+            color:green;
+            font-size: 24px;
+            border: solid #000;
+            border-width: 1px;
+        }
+        #changepage a{
+            text-decoration: none;
+               /* other styles goes here... */
+            display: inline-block;
+            border: solid #000;
+            color: black;
+            border-width: 1px;
+            padding: 4px;
+
+
+
+        }
+        .orders{
+            font-size: 20px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        #changepage p{
+            text-decoration: none;
+               /* other styles goes here... */
+            display: inline-block;
+            border: solid #000;
+            color: black;
+            border-width: 1px;
+            padding: 4px;
+
+
+
+        }
+        #one{
+
+
+        }
+        
+         #two{
+
+        }
+     #footer{
+           position: absolute;
+            margin-top: 700px;
+            background-color: black;
+            opacity: 0.8;
+            width: 99%;
+            height: 100px;
+
+        }
+        #myTopnav{
+            padding: 0px;
+        }
+    </style>
+    <body>
+        <div id="header">
+
+        </div>
+        <div id="background">
+        <img src="test2.jpg">
+        </div>
+        <div id="heading">
+        <h1>PITT Grocery Store</h1>
+        <div id="heading1">
+            <p id="text1">&nbsp;Hi,&nbsp;Hoshang!<a href="#" id="prevorders">&nbsp;Previous&nbsp;orders?</a></p>
+        <button id="button1" onclick="cart()">Check your cart</button>
+        </div>
+        </div>
+        <div id="heading2">
+        <h1>A healthier living for the students..</h1>
+        </div>
+        <div id="image1">
+        <img src="food.png" alt="PITT Grocery Store"/>
+        </div>
+ <div class="topnav">
+              <a href="index.html" onmouseover="view()" onmouseout="noview()">Home</a>
+              <a href="myaccount.html">Login</a>
+              <a href="newaccount.html">New Account</a>
+              <a href="newaccount.html">About Us</a>
+              <a href="addproducts.html" id="sales">Add Products</a>
+             <a href="seeproducts.html" id="sales1">Your Products</a>
+     <br>
+      <a href="index.html" id="fruits" onmouseover="view()" onmouseout="noview()">Fruits</a>
+     <br>
+     <a href="/vegetables/index.html" id="vegetables" onmouseover="view()" onmouseout="noview()">Vegetables</a>
+        </div>
+        
+        <div id="items">
+            <div class="orders">
+          <h1>Your previous orders:</h1>
+            <p id="test">Your orders will be displayed here.</p>
+                </div>
+        </div>   
+       
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+      
+        function cart()
+            {
+                window.location.assign("cart.html");
+            }
+     
+               
+                
+        
+var account1;
+            $.ajax({
+    url: "sales.php?",
+    cache: false,
+    type: "GET",
+    async: false,
+    success: function(response) {
+        
+        
+        
+        account1=response;
+        //document.getElementById("test1").innerHTML=account;
+        if(account1=="Salesperson")
+            {
+                
+                 $("#sales").show();
+                $("#sales1").show();
+            }
+            else{
+                $("#sales").hide();
+                $("#sales1").hide();
+            }
+
+    },
+    error: function(xhr) {
+       document.getElementById("test1").innerHTML= "No";
+    }
+});     
+       document.getElementById("test").innerHTML=account1;    
+            if(account1=="Customer")
+                {
+                    document.getElementById("test").innerHTML="Yes";
+                $.ajax({
+    url: "seeorders.php?",
+    cache: false,
+    type: "GET",
+    success: function(response) {
+        
+        document.getElementById("test").innerHTML=response;
+        
+
+    },
+    error: function(xhr) {
+       document.getElementById("test").innerHTML= "No";
+    }
+});  
+                }
+            else{
+                document.getElementById("test").innerHTML=("You must be a customer to have purchased an order.")
+            }
+            $('#fruits').hide();
+            $('#vegetables').hide();
+            function view(){
+                $('#fruits').show();
+            $('#vegetables').show();
+            }
+            function noview(){
+                $('#fruits').hide();
+            $('#vegetables').hide();
+            }
+        </script>
+
+
+    </body>
+</html>
