@@ -28,7 +28,6 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -42,124 +41,64 @@
    <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
     <title>NurseTrac</title>
 </head>
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <style>
-    
-<<<<<<< HEAD
-    
- #imgcontainer{
-       text-align: center;
-     
-       
+    body{
+        text-transform: none;
+        background-color: #3b5998;
+        color: white;  
     }
-    body {
-    background:#333;
-   
-}
-.form_bg {
-    background-color:#eee;
-
-    color:#666;
-    padding:20px;
-   padding-bottom: 20px;
-=======
-    .conatiner{
-        margin-top: 5%;
+    #heading{
+        
+        margin-left: 25%;
+        font-size: 36px;
+        position: relative;
+    }    
+    #imgcontainer{
+        margin-left: 26%;
         position: relative;
     }
- #imgcontainer{
-       text-align: center;
-     position: relative;
+    #container{
+        margin-left: 18%;
+        position: relative;
+        
     }
-    body {
-    background:#333;
+    #login{
+        margin-left: 26%;
+        padding-bottom: 10px;
+    }
+    input[type=submit] {
+        width: 100px;  
+        padding: 20px;
 }
-.form_bg {
-    background-color:#eee;
-    color:#666;
-    padding:20px;
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
-    border-radius:10px;
-    position: absolute;
-    border:1px solid #fff;
-    margin: auto;
-<<<<<<< HEAD
-     position: relative;
-=======
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 320px;
-    height: 280px;
-    text-align:center;
-}
-.align-center {
-    text-align:center;
-}
-<<<<<<< HEAD
-    .outer{
-       padding-top: 10%;
-
-}
-=======
-    
-    .
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
 </style>
     
-   
+
 <body>
-
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-     <div class="container">
-    <div class="row">
-        <div id="imgcontainer">
-    <img src="img/pitt.png" alt="Avatar">
-  </div>
-          <div class="outer">
-=======
-     
-        <div id="imgcontainer">
-    <img src="img/pitt.png" alt="Avatar">
-  </div>
-           <div class="container">
-    <div class="row">
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
-        <div class="form_bg">
-            
-        
-                          <h2 class="text-center">NurseTrac</h2>
-                <br/>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="mail" placeholder="User id">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <br/>
-                <div class="align-center">
-                    <button type="submit" class="btn btn-default" id="login" onclick="check()">Login</button>
-                </div>
-            
-        </div>
-<<<<<<< HEAD
-</div>
-=======
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
+    
+        <div id="heading" autocapitalize="none">
+        <p>NurseTrac</p>
     </div>
-</div>
+        <div id="imgcontainer">
+    <img src="img/pitt.png" alt="Avatar">
+  </div>
+  
+  <div id="container">
+      <form action="Overview.html">
+    <label><b>Username :</b></label>
+    <input type="text" placeholder="Enter Email account" id="mail" name="uname" required>
+      <br>
+    <label><b>Password :&nbsp;</b></label>
+    <input type="password" placeholder="Enter Password" id="password" name="psw" required>
+   <br>
+      </form>
+      <input type="submit" id="login" value="Login" onclick="check()">
+      <br><input type="checkbox" class="login"/>Remember me
+      <br>
+      
       <p id="txt"></p>
       <p id="txt2"></p>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/jquery/jquery.mobile-1.4.5.min.js"></script>
     <script src="jquery-3.2.1.js"></script>
    <script>
@@ -186,7 +125,6 @@
 });
              $.ajax({
     url: "check.php",
-    async: false,
     data: { 
        
     },
@@ -195,7 +133,7 @@
     success: function(response) {
         var a= response;
         document.getElementById("txt2").innerHTML= a;
-          if(mail.value==a)
+        if(mail.value==a)
           {
             document.getElementById("txt2").innerHTML= "Yes";
             window.location.assign("Overview.html")  
@@ -211,11 +149,18 @@
     }
                  
 });
-          document.getElementById("txt2").innerHTML= a+"Yes";
       
            // document.getElementById("txt2").innerHTML= a;
         }
 </script>
+    <!-- <div class="app">
+        <h1>PhoneGap</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div> -->
+
 </body>
 
 </html>
