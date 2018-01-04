@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+ 
+   
+>>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
+>>>>>>> 09e03c23c2fdde9321a19beabbbb85f314f749d1
 function openTab1()
     {
         window.location.assign("Overview.html");
@@ -189,7 +197,36 @@ function openActivity1()
             day=day12;
            // document.getElementById("txt").innerHTML=day;
         }
+<<<<<<< HEAD
    
+=======
+    function getDate(){
+        var value=year+"-"+month+"-"+day;
+        document.getElementById("txt1").innerHTML=value;
+<<<<<<< HEAD
+=======
+        var prevtext=$('#txt1').text();
+         $.ajax({
+    url: "prevtask.php",
+    data: { 
+      "date": prevtext
+      
+    
+      
+    },
+    cache: false,
+    type: "POST",
+    success: function(response) {
+     document.getElementById("txt2").innerHTML= response;
+    },
+    error: function(xhr) {
+      document.getElementById("txt2").innerHTML= "Error";
+    }
+});
+        
+>>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
+    }
+>>>>>>> 09e03c23c2fdde9321a19beabbbb85f314f749d1
         function daychange()
         {
             //document.getElementById("txt").innerHTML="Changing the days"; 

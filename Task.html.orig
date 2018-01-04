@@ -1,0 +1,1833 @@
+<<<<<<< HEAD
+<html>
+<head>
+<title>NurseTrac</title>
+    <style>
+        ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+div.tab
+    {
+        
+        margin-left: 1%;
+    }
+    div.tab button {
+    background-color: inherit;
+    float: left;
+    cursor: pointer;
+    width: 33%;
+    height: 8%;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+/* Month header */
+        
+        table tr td{
+            
+            border: 1px solid black;
+        }
+        #EssentialsList{
+            margin-left: 33%;
+            width: 33%;
+        }
+        #HR{
+            margin-left: 13%;
+        
+            
+        }
+.month {
+    
+    
+    width: 100%;
+    background: white;
+    text-align: center;
+}
+        #scroll{
+             text-decoration: none;
+            color:black;
+        }
+/* Month list */
+.month ul {
+    margin-top: 0;
+    padding: 0;
+}
+        
+.month ul li {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+        #para1 , #para2 , #para3 , #para4 , #para5 , #para6 , #para7 , #para8 , #para9 , #para10, #para11 , #para12 , #para13 , #para14 , #para15 , #para16 , #para17 , #para18 , #para19 , #para20, #para21 , #para22 , #para23 , #para24 , #para25 , #para26 , #para27 , #para28 , #para29 , #para30, #para31 , #para32 , #para33 , #para34 , #para35 , #para36 , #para37 , #para38 , #para39 , #para40, #para41, #para42
+        {
+            text-decoration: none;
+            color:black;
+            border: 5px;
+        }
+       
+        #para1:hover , #para2:hover , #para3:hover , #para4:hover , #para5:hover , #para6:hover , #para7:hover , #para8:hover , #para9:hover , #para10:hover, #para11:hover , #para12:hover , #para13:hover , #para14:hover , #para15:hover , #para16:hover , #para17:hover , #para18:hover , #para19:hover , #para20:hover, #para21:hover , #para22:hover , #para23:hover , #para24:hover , #para25:hover , #para26:hover , #para27:hover , #para28:hover , #para29:hover , #para30:hover, #para31:hover , #para32:hover , #para33:hover , #para34:hover , #para35:hover , #para36:hover , #para37:hover , #para38:hover , #para39:hover , #para40:hover , #para41:hover , #para42:hover{
+            color:#74AFAD;
+        }
+       
+        
+.weekdays li {
+    display: inline-block;
+    width: 12%;
+    color: #666;
+    text-align: center;
+}
+        .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 8px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color:#777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #3b5998;
+    color: white !important
+}
+    </style>
+    <script async src="//jsfiddle.net/chafg/105/embed/"></script>
+    <script type="text/javascript">
+    var dateReturned = document.getElementById("calFrame").contentWindow.document.getElementById("selected_date").value;
+        function showIFrame() {
+    var myIframe = $('#calFrame');
+    myIframe.attr('src').val();
+    myIframe.show();
+}
+</script>
+  
+    <script>
+function toggleField(hideObj,showObj){
+  hideObj.disabled=true;        
+  hideObj.style.display='none';
+  showObj.disabled=false;   
+  showObj.style.display='inline';
+  showObj.focus();
+}
+</script> 
+</head>
+<style>
+    div.tab
+    {
+        margin-top: 10%;
+        margin-left: 1%;
+    }
+   
+	 div.tab button 
+    {
+    background-color: inherit;
+    float: left;
+    cursor: pointer;
+    width: 33%;
+    height: 8%;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.3s;
+     }
+    #tablinks2
+    {
+        background-color: #e7e7e7; color: black;
+    }
+    
+    #subtab{
+        position: relative;
+        margin-left: 1%;
+        /*text-align:center;*/
+    }
+    
+    .container{
+     	position: relative;
+        margin-left: 1%;
+        margin-top: 10%;
+        /*text-align:center;*/
+        
+    div.formElement3{
+	    position:relative;
+	    margin-left: 1%
+	    width: 300 px;
+	    border: 25px solid green;
+	    padding: 25px;
+    }
+    
+    }
+    @media only screen and (max-width: 730px) {
+
+ h2{
+        font-size: 6vw;
+    }
+h3{
+        font-size: 4.3vw;
+    }
+}
+    #next2{
+        background-color: #efefef;
+        width:99%;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    height: 8%;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.3s;
+    
+        
+    }
+    #next4{
+        background-color: #efefef;
+        width:33%;
+        margin-left: 33%;
+    float: left;
+    cursor: pointer;
+   text-decoration: none;
+    height: 10%;
+    font-size: 18px;
+    transition: 0.3s;
+    
+        
+    }
+    #next3{
+        margin-left: 66%;
+        width: 33%;
+        height: 10%;
+        font-size: 18px;  
+        border-width: 1px; 
+        max-width: 100%; 
+        font-family: Trebuchet MS;
+        text-align: center;
+        
+    }
+   #dimmer {
+                background:#000;
+                opacity:0.5;
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;--change this?
+                height:100%;--change this?
+                display:none;
+                z-index:100500;--really big number
+                MsFilter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);--IE
+                filter: alpha(opacity=50);
+                MozOpacity: 0.5;--FF
+                KhtmlOpacity: 0.5;
+            }
+    
+</style>
+    <script src="/jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+   
+<body>
+    
+<div id="items">
+<div class="tab">
+  <button id="tablinks1" onclick="openTab1()">Overview</button>
+  <button id="tablinks2" onclick="openTab2()">Task</button>
+  <button id="tablinks3" onclick="openTab3()">Profile</button>
+</div>
+<div id="Task" class="tabcontent">
+<div class="content">
+<div class="month"> 
+  <ul>
+    <li class="prev"><a id="scroll" title="Click to do something"
+ href="#" onclick="datem(-1);return false;">&#10096; &#10096;</a></li>
+    <li class="next"><a id="scroll" title="Click to do something"
+ href="#" onclick="datem(1);return false;">&#10097; &#10097;</a></li>
+    <li>
+        <p id="month12"></p>
+        <p id="year12">2017</p>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Su</li>
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+</ul>
+
+<ul class="days"> 
+    <p id="days12">
+        
+  <li><a id="para1" title="Click to do something"
+ href="1" onclick="date(1);return false;">1</a></li>
+  <li><a id="para2" title="Click to do something"
+ href="2" onclick="date(2);return false;">2</a></li>
+  <li><a id="para3" title="Click to do something"
+ href="#" onclick="date(3);return false;">3</a></li>
+  <li><a id="para4" title="Click to do something"
+ href="#" onclick="date(4);return false;">4</a></li>
+  <li><a id="para5" title="Click to do something"
+ href="#" onclick="date(5);return false;">5</a></li>
+  <li><a id="para6" title="Click to do something"
+ href="#" onclick="date(6);return false;">6</a></li>
+  <li><a id="para7" title="Click to do something"
+ href="#" onclick="checking(7);date(7);return false;">7</a></li>
+    <br>
+  <li><a id="para8" title="Click to do something"
+ href="#" onclick="date(8);return false;">8</a></li>
+  <li><a id="para9" title="Click to do something"
+ href="#" onclick="date(9);return false;">9</a></li>
+  <li><a id="para10" title="Click to do something"
+ href="#" onclick="date(10);return false;">10</a></li>
+  <li><a id="para11" title="Click to do something"
+ href="#" onclick="date(11);return false;">11</a></li>
+  <li><a id="para12" title="Click to do something"
+ href="#" onclick="date(12);return false;">12</a></li>
+  <li><a id="para13" title="Click to do something"
+ href="#" onclick="date(13);return false;">13</a></li>
+  <li><a id="para14" title="Click to do something"
+ href="#" onclick="date(14);return false;">14</a></li>
+  <br>
+  <li><a id="para15" title="Click to do something"
+ href="#" onclick="date(15);return false;">15</a></li>
+  <li><a id="para16" title="Click to do something"
+ href="#" onclick="date(16);return false;">16</a></li>
+  <li><a id="para17" title="Click to do something"
+ href="#" onclick="date(17);return false;">17</a></li>
+  <li><a id="para18" title="Click to do something"
+ href="#" onclick="date(18);return false;">18</a></li>
+  <li><a id="para19" title="Click to do something"
+ href="#" onclick="date(19);return false;">19</a></li>
+  <li><a id="para20" title="Click to do something"
+ href="#" onclick="date(20);return false;">20</a></li>
+  <li><a id="para21" title="Click to do something"
+ href="#" onclick="date(21);return false;">21</a></li>
+<br>
+  <li><a id="para22" title="Click to do something"
+ href="#" onclick="date(22);return false;">22</a></li>
+  <li><a id="para23" title="Click to do something"
+ href="#" onclick="date(23);return false;">23</a></li>
+  <li><a id="para24" title="Click to do something"
+ href="#" onclick="date(24);return false;">24</a></li>
+  <li><a id="para25" title="Click to do something"
+ href="#" onclick="date(25);return false;">25</a></li>
+  <li><a id="para26" title="Click to do something"
+ href="#" onclick="date(26);return false;">26</a></li>
+  <li><a id="para27" title="Click to do something"
+ href="#" onclick="date(27);return false;">27</a></li>
+  <li><a id="para28" title="Click to do something"
+ href="#" onclick="date(28);return false;">28</a></li>
+        <br>
+  <li><a id="para29" title="Click to do something"
+ href="#" onclick="date(29);return false;">29</a></li>
+  <li><a id="para30" title="Click to do something"
+ href="#" onclick="date(30);return false;">30</a></li>
+  <li><a id="para31" title="Click to do something"
+ href="#" onclick="date(31);return false;">31</a></li>
+  <li><a id="para32" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para33" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para34" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para35" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+        <br>
+  <li><a id="para36" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para37" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para38" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para39" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para40" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para41" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para42" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+    </p>  
+   
+</ul>
+    
+
+<p id="txt1"></p>
+    <p id="txt4"></p>
+     <p id="txt5"></p>
+    <p id="txt6"></p>
+     <p id="txt7"></p>
+   
+
+<button id="fulldate" onclick="getDate()">Select date</button>
+
+<div onload = "document.innerHTML(dateReturned) = dateReturned">
+</div>
+<div id="addtask" id="dimmer" style="display:block">    
+<div class="formelement3">
+    <h2 id = "Essentials" style="background-color: #efefef; text-align: center; font-family: Trebuchet MS;" onchange="newessential()">  <B> Select an Essential: </B></h2>
+    <form>
+        <select id="EssentialsList" table-layout=fixed style="font-size: 18px;  border-width: 1px; max-width: 100%; font-family: Trebuchet MS;" onchange="newessential()">
+                <option value="" selected>Select an Essential</option>
+                <option value="E1">Background for Practice</option>
+                <option value="E2">Organizational and Systems Leadership</option>
+                <option value="E3">Quality Improvement and Safety</option>
+                <option value="E4">Translating and Integrating Scholarship into Practice</option>
+                <option value="E5">Informatics and Healthcare Technologies </option>
+                <option value="E6">Health Policy and Advocacy</option>
+                <option value="E7">Interprofessional Collaboration for Improving Patient and Population Health Outcomes</option>
+                <option value="E8">Clinical Prevention and Population Health for Improving Health</option>
+                <option value="E9">Master's-Level Nursing Practice</option>
+        </select>
+</form>
+    </div>
+
+<div class="formelements" style="display:block; text-align: center">
+        <h2 id = "Hours" style="background-color: #efefef; text-align: center;font-family: Trebuchet MS;">  <B> Select Hours: </B></h2>
+    <form>
+        <select id="HR" style="font-size: 18px; width:30%; border-width: 1px;font-family: Trebuchet MS;" onchange="newhour()">
+             <option value="" selected>Hours</option>
+                <option value="0" id="0hour">0</option>
+                <option value="1" id="1hour">1</option>
+                <option value="2" id="2hour">2</option>
+                <option value="3" id="3hour">3</option>
+                <option value="4" id="4hour">4</option>
+                <option value="5" id="5hour">5</option>
+                <option value="6" id="6hour">6</option>
+                <option value="7" id="7hour">7</option>
+                <option value="8" id="8hour">8</option>
+                <option value="9" id="9hour">9</option>
+                <option value="10" id="10hour">10</option>
+                <option value="11" id="11hour">11</option>
+                <option value="12" id="12hour">12</option>
+        </select>
+        <select id="MIN" style="font-size: 18px; width: 30%;  border-width: 1px;font-family: Trebuchet MS;"  onchange="newminute()">
+                <option value="" selected>Minutes</option>
+                <option value="00" id="0minutes">00</option>
+                <option value="30" id="30minutes">30</option>
+        </select>
+</form>
+    </div>
+    
+    <h2 id = "Target Activity" style="background-color: #efefef; text-align: center; font-family: Trebuchet MS;">  <B> Select Target Activity: </B></h2>
+   
+<div id="Task" class="tabcontent">
+
+<div class="formElement3">
+	<h3> <button id="next2" onclick="onclick1(1)"><B>Click here to select your target activity  > </B></button> </h3>
+    <textarea style="width:100%;" id="final_target" rows=10 readonly></textarea>
+</div>
+
+
+<!--    
+<div class="formElement3">
+	<h3> <button id="TargetActivityPg1" onclick="openActivity1()"><B> TARGET ACTIVITY  > </B></button> </h3>
+	<textarea style="width:100%;" rows=10></textarea>
+</div>
+-->
+    </div>
+    </div>
+    <div id="addtask1">    
+<div class="formelement3">
+    <form>
+       <select id="EssentialsList1" table-layout=fixed style="font-size: 18px;  border-width: 1px; max-width: 100%; font-family: Trebuchet MS;" onchange="newessential()">
+                <option value="" selected>Select an Essential</option>
+                <option value="E1">Background for Practice</option>
+                <option value="E2">Organizational and Systems Leadership</option>
+                <option value="E3">Quality Improvement and Safety</option>
+                <option value="E4">Translating and Integrating Scholarship into Practice</option>
+                <option value="E5">Informatics and Healthcare Technologies </option>
+                <option value="E6">Health Policy and Advocacy</option>
+                <option value="E7">Interprofessional Collaboration for Improving Patient and Population Health Outcomes</option>
+                <option value="E8">Clinical Prevention and Population Health for Improving Health</option>
+                <option value="E9">Master's-Level Nursing Practice</option>
+        </select>
+</form>
+    </div>
+
+<div class="formelements" style="display:block; text-align: center">
+        <h2 id = "Hours" style="background-color: #efefef; text-align: center;font-family: Trebuchet MS;">  <B> Select Hours: </B></h2>
+    <form>
+        <select id="HR1" style="font-size: 18px; width:30%; border-width: 1px;font-family: Trebuchet MS;" onchange="newhour()">
+             <option value="" selected>Hours</option>
+                <option value="0" id="0hour1">0</option>
+                <option value="1" id="1hour1">1</option>
+                <option value="2" id="2hour1">2</option>
+                <option value="3" id="3hour1">3</option>
+                <option value="4" id="4hour1">4</option>
+                <option value="5" id="5hour1">5</option>
+                <option value="6" id="6hour1">6</option>
+                <option value="7" id="7hour1">7</option>
+                <option value="8" id="8hour1">8</option>
+                <option value="9" id="9hour1">9</option>
+                <option value="10" id="10hour1">10</option>
+                <option value="11" id="11hour1">11</option>
+                <option value="12" id="12hour1">12</option>
+        </select>
+        <select name="MIN" style="font-size: 18px; width: 30%;  border-width: 1px;font-family: Trebuchet MS;">
+                <option value="" selected>Minutes</option>
+                <option value="00" id="0minutes">00</option>
+                <option value="30" id="30minutes">30</option>
+        </select>
+</form>
+    </div>
+    
+    <h2 id = "Target Activity" style="background-color: #efefef; text-align: center; font-family: Trebuchet MS;">  <B> Select Target Activity: </B></h2>
+   
+<div id="Task" class="tabcontent">
+
+<div class="formElement3">
+	<h3> <button id="next2" onclick="onclick1(2)"><B>Click here to select your target activity  > </B></button> </h3>
+    <textarea style="width:100%;" id="final_target2" rows=10 readonly></textarea>
+</div>
+
+
+<!--    <div class="formElement3">
+	<h3> <button id="TargetActivityPg1" onclick="openActivity1()"><B> TARGET ACTIVITY  > </B></button> </h3>
+	<textarea style="width:100%;" rows=10></textarea>
+</div>
+-->
+    </div>
+    </div>
+    <div class="wrapper">
+        <button onclick="addtask(true)" id="next4">    <h2>Submit</h2>    </button></div>
+
+    </div>
+    </div>
+    
+    
+    </div>
+<div id="target_activity"><br>
+    <button id="TargetActivityPg1Back" onclick="onclick2()"><B> < Go back </B></button> </h3>
+        <table id="table1">
+    	<h2> Target Activity </h2>
+    
+	<tr>
+		<th> Select Activity</th>
+	</tr>
+   
+	<tr><td><input type="radio" name="target" id="1" value="Interview a member of quality improvement department"> Interview a member of quality improvement department<br></td></tr>
+	<tr><td><input type="radio" name="target" id="2" value="Meet with member of risk management team"> Meet with member of risk management team<br></td></tr>
+	<tr><td><input type="radio" name="target" id="3" value=" Review quality reports and metrics"> Review quality reports and metrics<br></td></tr>
+	<tr><td><input type="radio" name="target" id="4" value="Evaluate your competence with informatics."> Evaluate your competence with informatics.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="5" value="Speak with nurse informaticist, system analyst, or IT department regarding reports."> Speak with nurse informaticist, system analyst, or IT department regarding reports.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="6" value="Identify types of clinical decision support (CDS)."> Identify types of clinical decision support (CDS).<br></td></tr>
+	<tr><td><input type="radio" name="target" id="7" value="Conduct a journal club to critically appraise the research evidence."> Conduct a journal club to critically appraise the research evidence.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="8" value="Meet with nursing leadership to write an EBP vision statement."> Meet with nursing leadership to write an EBP vision statement.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="9" value="Meet with nursing leadership to discuss practice issues."> Meet with nursing leadership to discuss practice issues.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="10" value="Meet with nursing administrators to identify barriers to healthy follow-up care."> Meet with nursing administrators to identify barriers to healthy follow-up care.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="11" value="Develop a communication plan that addresses the needs of key stakeholders in relation to the CNL role."> Develop a communication plan that addresses the needs of key stakeholders in relation to the CNL role.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="12" value="Attend a new employee orientation session with senior leadership focusing on mission, values, and expectations from staff."> Attend a new employee orientation session with senior leadership focusing on mission, values, and expectations from staff.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="13" value="Analyze data and infection control principles in collaboration with the with the infectious disease coordinator."> Analyze data and infection control principles in collaboration with the with the infectious disease coordinator.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="14" value="Review preparedness plans with the disaster management team"> Review preparedness plans with the disaster management team<br></td></tr>
+	<tr><td><input type="radio" name="target" id="15" value="Conduct a microsystem analysis using a quality improvement process."> Conduct a microsystem analysis using a quality improvement process.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="16" value="Assess human and physical resource, perform a gap analysis, and communicate needs to stakeholders."> Assess human and physical resource, perform a gap analysis, and communicate needs to stakeholders.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="17" value="Identify a gap in care for at-risk population, compare existing to best practices, lead a practice change, and evaluate the impact."> Identify a gap in care for at-risk population, compare existing to best practices, lead a practice change, and evaluate the impact.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="18" value="Present recommendations for change to appropriate audiences."> Present recommendations for change to appropriate audiences.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="19" value="Communicate ideas regarding a practice issue or proposed policy change in an informal setting."> Communicate ideas regarding a practice issue or proposed policy change in an informal setting.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="20" value="Use patient information system data, assess data, design and implement a change in patient care."> Use patient information system data, assess data, design and implement a change in patient care.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="21" value="Evaluate practices and outcomes of care for potential cost savings; Use graphics to present idea to interdisciplinary team."> Evaluate practices and outcomes of care for potential cost savings; Use graphics to present idea to interdisciplinary team.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="22" value="Conduct an assessment of a patient cohort with complex health problems, identify needs, and develop plans to improve patient outcomes."> Conduct an assessment of a patient cohort with complex health problems, identify needs, and develop plans to improve patient outcomes.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="23" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Conduct a health education class for a patient or staff cohort and evaluate the class.<br></td></tr>
+    <tr><td><input type="radio" name="target" id="24" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Other.<br></td></tr>
+	
+	<tr><td>Other:(If selected Other, please enter the Target below:)<textarea rows="3" style="width:100%;" id="Other"> 
+        </textarea></td></tr>
+</table>
+    <br>
+    <button id="next3" onclick="onclick3()">   Next >  </button>
+</div>
+    <div id="target_activity2">
+<button class="button button1" onclick="openActivityPg1()"><B> < </B></button> </h3>
+<header>
+	<h2> Target Activity </h22>
+</header>
+<p align="left">
+Follow up Explanation: <textarea rows="15" style="width:100%;" id="explain">  </textarea>
+</p>
+<br>
+<p>
+Prompts:(These are references for your explanation, above.)<br>
+1. What were the methods, tools, and measurement techniques used in the activity?<br>
+2. What were the results or next steps?<br>
+3. How does the role of the CNL impact the activity?<br>
+</p>
+
+<div class="wrapper">
+	<p align="right">
+		<br>
+        <button id="next3" onclick="onclick4()" align=right>    <H4>DONE</H4>    </button></div>
+</div>
+
+    
+    <script src="task.js"></script>
+    <script>
+        $('#txt4').hide();
+        $('#txt5').hide();
+        $('#txt6').hide();
+        $('#txt7').hide();
+        $('#addtask1').hide();
+        $('#target_activity').hide();
+        $('#target_activity2').hide();
+        
+        function openActivityPg1(){
+            $('#items').hide();
+             $('#target_activity').show();
+        $('#target_activity2').hide();
+        }
+        var alpha;
+        var a;
+    function onclick1(a){
+        
+        alpha=a;
+        $('#items').hide();
+        $('#target_activity').show();
+        
+    }
+         function onclick2(){
+        
+        $('#items').show();
+        $('#target_activity').hide();
+        
+    }
+        var account="Please enter a Target Activity.";
+        var account_no="1";
+         function onclick3(){
+        
+        $('#items').hide();
+             $('#target_activity').hide();
+        $('#target_activity2').show();
+             if(document.getElementById('1').checked) {
+  account = document.getElementById("1").value;
+                 account_no="1";
+}else if(document.getElementById('2').checked) {
+  account = document.getElementById("2").value;
+    account_no="2";
+}
+        else if(document.getElementById('3').checked) {
+  account = document.getElementById("3").value;
+            account_no="3";
+}
+        else if(document.getElementById('4').checked) {
+  account = document.getElementById("4").value;
+            account_no="4";
+}
+        else if(document.getElementById('5').checked) {
+  account = document.getElementById("5").value;
+            account_no="5";
+}
+        else if(document.getElementById('6').checked) {
+  account = document.getElementById("6").value;
+            account_no="6";
+}
+        else if(document.getElementById('7').checked) {
+  account = document.getElementById("7").value;
+            account_no="7";
+}
+        else if(document.getElementById('8').checked) {
+  account = document.getElementById("8").value;
+            account_no="8";
+}
+        else if(document.getElementById('9').checked) {
+  account = document.getElementById("9").value;
+            account_no="9";
+}
+        else if(document.getElementById('10').checked) {
+  account = document.getElementById("10").value;
+            account_no="10";
+}
+        else if(document.getElementById('11').checked) {
+  account = document.getElementById("11").value;
+            account_no="11";
+}
+        else if(document.getElementById('12').checked) {
+  account = document.getElementById("12").value;
+            account_no="12";
+}
+        else if(document.getElementById('13').checked) {
+  account = document.getElementById("13").value;
+            account_no="13";
+}
+        else if(document.getElementById('14').checked) {
+  account = document.getElementById("14").value;
+            account_no="14";
+}
+        else if(document.getElementById('15').checked) {
+  account = document.getElementById("15").value;
+            account_no="15";
+}
+        else if(document.getElementById('16').checked) {
+  account = document.getElementById("16").value;
+            account_no="16";
+}
+        else if(document.getElementById('17').checked) {
+  account = document.getElementById("17").value;
+            account_no="17";
+}
+        else if(document.getElementById('18').checked) {
+  account = document.getElementById("18").value;
+            account_no="18";
+}
+        else if(document.getElementById('19').checked) {
+  account = document.getElementById("19").value;
+            account_no="19";
+}
+        else if(document.getElementById('20').checked) {
+  account = document.getElementById("20").value;
+            account_no="20";
+        }
+        else if(document.getElementById('21').checked) {
+  account = document.getElementById("21").value;
+            account_no="21";
+}
+        else if(document.getElementById('22').checked) {
+  account = document.getElementById("22").value;
+            account_no="22";
+}
+        else if(document.getElementById('23').checked) {
+  account = document.getElementById("23").value;
+            account_no="23";
+}
+        else if(document.getElementById('24').checked){
+  account = document.getElementById("Other").value;
+            
+}
+             if(alpha=="1")
+                 {
+       document.getElementById("final_target").value= account;
+       document.getElementById("txt5").innerHTML=account_no;
+                 }
+             else if(alpha=="2")
+                 {
+                      document.getElementById("final_target2").value= account;
+       document.getElementById("txt5").innerHTML=account_no;
+                 }
+    }
+        var explain;
+        function onclick4()
+        {
+            
+        $('#items').show();
+        $('#target_activity2').hide();
+       explain=document.getElementById("explain").value;
+            if(alpha=="1")
+                {
+            document.getElementById("final_target").value= account + " \nExplanation: " +explain;
+                }
+            else if(alpha=="2"){
+                document.getElementById("final_target2").value= account + " \nExplanation: " +explain;
+            }
+            
+    }
+        
+        function checking(checker)
+        {
+            document.getElementById("txt3").innerHTML="true";
+        }
+        function addtask(bool)
+        {
+           
+             var text = $('#txt1').text();
+             document.getElementById("txt4").innerHTML= text;
+       $.ajax({
+    url: "addtask.php",
+    data: { 
+      "date": text,
+      "hours": total,
+      "target": account_no,
+      "ess": ess,
+      "explain": explain
+    
+      
+    },
+    cache: false,
+    type: "POST",
+    success: function(response) {
+     document.getElementById("txt").innerHTML= response;
+    },
+    error: function(xhr) {
+      document.getElementById("txt").innerHTML= "Error";
+    }
+});
+            
+            $('#addtask1').show();
+            $("#addtask").addClass("disabledbutton");
+            if(alpha=="2")
+                {
+            $("#addtask1").addClass("disabledbutton");
+                    $("#next4").addClass("disabledbutton");
+                }
+            
+        }
+        $('a').css("background-color","#e7e7e7");
+        $('a').on('click', function(){$('a').css("background-color","#e7e7e7");});
+        $('a').on('click', function(){$('a').css("color","#000000");});
+        $('a').on('click', function(){$(this).css("background-color","#558C89");});
+        $('a').on('click', function(){$(this).css("color","#FFFFFF");});
+        var hours;
+        var hrs=0;
+        var minutes;
+        var min=0;
+        var total;
+        function newhour(){
+        hours=document.getElementById('HR').selectedOptions[0].text;
+      document.getElementById("txt4").innerHTML= hours;
+            if(hours=="0")
+                {
+                    hrs=0;
+                }
+            else if(hours=="1")
+                {
+                 hrs=1;   
+                }
+            else if(hours=="2")
+                {
+                 hrs=2;   
+                }
+            else if(hours=="3")
+                {
+                    hrs=3;
+                }
+            else if(hours=="4")
+                {
+                    hrs=4;
+                }
+            else if(hours=="5")
+                {
+                    hrs=5;
+                }
+            else if(hours=="6")
+                {
+                    hrs=6;
+                }
+            else if(hours=="7")
+                {
+                    hrs=7;
+                }
+            else if(hours=="8")
+                {
+                    hrs=8;
+                }
+            else if(hours=="9")
+                {
+                    hrs=9;
+                }
+            else if(hours=="10")
+                {
+                    hrs=10;
+                }
+            else if(hours=="11")
+                {
+                    hrs=11;
+                }
+            else if(hours=="12")
+                {
+                    hrs=12;
+                }
+            total=hrs+min;
+            document.getElementById("txt6").innerHTML= total;
+        }
+        
+        function newminute(){
+        minutes=document.getElementById('MIN').selectedOptions[0].text;
+            if(minutes == "00")
+                {
+                    min=0;
+                }
+            else{
+                 min=0.5;
+            }
+        document.getElementById("txt5").innerHTML= min;
+            
+            total=hrs+min;
+            document.getElementById("txt6").innerHTML= total;
+        }
+        var Essential="E1";
+        var ess=0;
+        function newessential()
+        {
+            Essential=document.getElementById('EssentialsList').selectedOptions[0].value;
+            if(Essential=="E1")
+                {
+                    ess=1;
+                }
+            else if(Essential=="E2"){
+                ess=2;
+            }
+            else if(Essential=="E3"){
+                ess=3;
+            }
+            else if(Essential=="E4"){
+                ess=4;
+            }
+            else if(Essential=="E5"){
+                ess=5;
+            }
+            else if(Essential=="E6"){
+                ess=6;
+            }
+            else if(Essential=="E7"){
+                ess=7;
+            }
+            else if(Essential=="E8"){
+                ess=8;
+            }
+            else if(Essential=="E9"){
+                ess=9;
+            }
+            else{
+                
+            }
+            document.getElementById("txt7").innerHTML= ess;
+        }
+    </script>
+</body>
+=======
+<html>
+<head>
+<title>NurseTrac</title>
+    <style>
+        ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+div.tab
+    {
+        
+        margin-left: 1%;
+        
+    }
+    div.tab button {
+    background-color: inherit;
+    float: left;
+    cursor: pointer;
+    width: 33%;
+    height: 8%;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+/* Month header */
+        
+        table tr td{
+            
+            border: 1px solid black;
+        }
+        #EssentialsList{
+            margin-left: 33%;
+            width: 33%;
+        }
+        #HR{
+            margin-left: 13%;
+        
+            
+        }
+.month {
+    
+    
+    width: 100%;
+    background: white;
+    text-align: center;
+}
+        #scroll{
+             text-decoration: none;
+            color:black;
+        }
+/* Month list */
+.month ul {
+    margin-top: 0;
+    padding: 0;
+}
+        
+.month ul li {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+        #para1 , #para2 , #para3 , #para4 , #para5 , #para6 , #para7 , #para8 , #para9 , #para10, #para11 , #para12 , #para13 , #para14 , #para15 , #para16 , #para17 , #para18 , #para19 , #para20, #para21 , #para22 , #para23 , #para24 , #para25 , #para26 , #para27 , #para28 , #para29 , #para30, #para31 , #para32 , #para33 , #para34 , #para35 , #para36 , #para37 , #para38 , #para39 , #para40, #para41, #para42
+        {
+            text-decoration: none;
+            color:black;
+            border: 5px;
+        }
+       
+        #para1:hover , #para2:hover , #para3:hover , #para4:hover , #para5:hover , #para6:hover , #para7:hover , #para8:hover , #para9:hover , #para10:hover, #para11:hover , #para12:hover , #para13:hover , #para14:hover , #para15:hover , #para16:hover , #para17:hover , #para18:hover , #para19:hover , #para20:hover, #para21:hover , #para22:hover , #para23:hover , #para24:hover , #para25:hover , #para26:hover , #para27:hover , #para28:hover , #para29:hover , #para30:hover, #para31:hover , #para32:hover , #para33:hover , #para34:hover , #para35:hover , #para36:hover , #para37:hover , #para38:hover , #para39:hover , #para40:hover , #para41:hover , #para42:hover{
+            background-color:#3b5998;
+            color:white;
+        }
+       
+        
+.weekdays li {
+    display: inline-block;
+    width: 12%;
+    color: #666;
+    text-align: center;
+}
+        .disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 8px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 12%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color:#777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #3b5998;
+    color: white !important
+}
+    </style>
+    <script async src="//jsfiddle.net/chafg/105/embed/"></script>
+    <script type="text/javascript">
+    var dateReturned = document.getElementById("calFrame").contentWindow.document.getElementById("selected_date").value;
+        function showIFrame() {
+    var myIframe = $('#calFrame');
+    myIframe.attr('src').val();
+    myIframe.show();
+}
+</script>
+  
+    <script>
+function toggleField(hideObj,showObj){
+  hideObj.disabled=true;        
+  hideObj.style.display='none';
+  showObj.disabled=false;   
+  showObj.style.display='inline';
+  showObj.focus();
+}
+</script> 
+</head>
+<style>
+    div.tab
+    {
+        margin-top: 10%;
+        margin-left: 1%;
+    }
+   
+	 div.tab button 
+    {
+    background-color: inherit;
+    float: left;
+    cursor: pointer;
+    width: 33%;
+    height: 8%;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.3s;
+     }
+    #tablinks2
+    {
+        background-color: #e7e7e7; color: black;
+    }
+    
+    #subtab{
+        position: relative;
+        margin-left: 1%;
+        /*text-align:center;*/
+    }
+    
+    .container{
+     	position: relative;
+        margin-left: 1%;
+        margin-top: 10%;
+        /*text-align:center;*/
+        
+    div.formElement3{
+	    position:relative;
+	    margin-left: 1%
+	    width: 300 px;
+	    border: 25px solid green;
+	    padding: 25px;
+    }
+    
+    }
+    @media only screen and (max-width: 730px) {
+
+ h2{
+        font-size: 6vw;
+    }
+h3{
+        font-size: 4.3vw;
+    }
+}
+    #next2{
+        background-color: #efefef;
+        width:99%;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    height: 8%;
+    padding: 14px 16px;
+    font-size: 18px;
+    transition: 0.3s;
+    
+        
+    }
+    #next4{
+        background-color: #efefef;
+        width:33%;
+        margin-left: 33%;
+    float: left;
+    cursor: pointer;
+   text-decoration: none;
+    height: 10%;
+    font-size: 18px;
+    transition: 0.3s;
+    
+        
+    }
+    #next3{
+        margin-left: 66%;
+        width: 33%;
+        height: 10%;
+        font-size: 18px;  
+        border-width: 1px; 
+        max-width: 100%; 
+        font-family: Trebuchet MS;
+        text-align: center;
+        
+    }
+   #dimmer {
+                background:#000;
+                opacity:0.5;
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;--change this?
+                height:100%;--change this?
+                display:none;
+                z-index:100500;--really big number
+                MsFilter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);--IE
+                filter: alpha(opacity=50);
+                MozOpacity: 0.5;--FF
+                KhtmlOpacity: 0.5;
+            }
+    
+</style>
+    <script src="/jquery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+   
+<body>
+    
+<div id="items">
+<div class="tab">
+  <button id="tablinks1" onclick="openTab1()">Overview</button>
+  <button id="tablinks2" onclick="openTab2()">Task</button>
+  <button id="tablinks3" onclick="openTab3()">Profile</button>
+</div>
+<div id="Task" class="tabcontent">
+<div class="content">
+<div class="month"> 
+  <ul>
+    <li class="prev"><a id="scroll" title="Click to do something"
+ href="#" onclick="datem(-1);return false;">&#10096; &#10096;</a></li>
+    <li class="next"><a id="scroll" title="Click to do something"
+ href="#" onclick="datem(1);return false;">&#10097; &#10097;</a></li>
+    <li>
+        <p id="month12"></p>
+        <p id="year12">2017</p>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Su</li>
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+</ul>
+
+<ul class="days"> 
+    <p id="days12">
+        
+  <li><a id="para1" title="Click to do something"
+ href="1" onclick="date(1);return false;">1</a></li>
+  <li><a id="para2" title="Click to do something"
+ href="2" onclick="date(2);return false;">2</a></li>
+  <li><a id="para3" title="Click to do something"
+ href="#" onclick="date(3);return false;">3</a></li>
+  <li><a id="para4" title="Click to do something"
+ href="#" onclick="date(4);return false;">4</a></li>
+  <li><a id="para5" title="Click to do something"
+ href="#" onclick="date(5);return false;">5</a></li>
+  <li><a id="para6" title="Click to do something"
+ href="#" onclick="date(6);return false;">6</a></li>
+  <li><a id="para7" title="Click to do something"
+ href="#" onclick="checking(7);date(7);return false;">7</a></li>
+    <br>
+  <li><a id="para8" title="Click to do something"
+ href="#" onclick="date(8);return false;">8</a></li>
+  <li><a id="para9" title="Click to do something"
+ href="#" onclick="date(9);return false;">9</a></li>
+  <li><a id="para10" title="Click to do something"
+ href="#" onclick="date(10);return false;">10</a></li>
+  <li><a id="para11" title="Click to do something"
+ href="#" onclick="date(11);return false;">11</a></li>
+  <li><a id="para12" title="Click to do something"
+ href="#" onclick="date(12);return false;">12</a></li>
+  <li><a id="para13" title="Click to do something"
+ href="#" onclick="date(13);return false;">13</a></li>
+  <li><a id="para14" title="Click to do something"
+ href="#" onclick="date(14);return false;">14</a></li>
+  <br>
+  <li><a id="para15" title="Click to do something"
+ href="#" onclick="date(15);return false;">15</a></li>
+  <li><a id="para16" title="Click to do something"
+ href="#" onclick="date(16);return false;">16</a></li>
+  <li><a id="para17" title="Click to do something"
+ href="#" onclick="date(17);return false;">17</a></li>
+  <li><a id="para18" title="Click to do something"
+ href="#" onclick="date(18);return false;">18</a></li>
+  <li><a id="para19" title="Click to do something"
+ href="#" onclick="date(19);return false;">19</a></li>
+  <li><a id="para20" title="Click to do something"
+ href="#" onclick="date(20);return false;">20</a></li>
+  <li><a id="para21" title="Click to do something"
+ href="#" onclick="date(21);return false;">21</a></li>
+<br>
+  <li><a id="para22" title="Click to do something"
+ href="#" onclick="date(22);return false;">22</a></li>
+  <li><a id="para23" title="Click to do something"
+ href="#" onclick="date(23);return false;">23</a></li>
+  <li><a id="para24" title="Click to do something"
+ href="#" onclick="date(24);return false;">24</a></li>
+  <li><a id="para25" title="Click to do something"
+ href="#" onclick="date(25);return false;">25</a></li>
+  <li><a id="para26" title="Click to do something"
+ href="#" onclick="date(26);return false;">26</a></li>
+  <li><a id="para27" title="Click to do something"
+ href="#" onclick="date(27);return false;">27</a></li>
+  <li><a id="para28" title="Click to do something"
+ href="#" onclick="date(28);return false;">28</a></li>
+        <br>
+  <li><a id="para29" title="Click to do something"
+ href="#" onclick="date(29);return false;">29</a></li>
+  <li><a id="para30" title="Click to do something"
+ href="#" onclick="date(30);return false;">30</a></li>
+  <li><a id="para31" title="Click to do something"
+ href="#" onclick="date(31);return false;">31</a></li>
+  <li><a id="para32" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para33" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para34" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para35" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+        <br>
+  <li><a id="para36" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para37" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para38" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para39" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para40" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para41" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+  <li><a id="para42" title="Click to do something"
+ href="#" onclick="date();return false;"></a></li>
+    </p>  
+   
+</ul>
+    
+
+<p id="txt1"></p>
+    <p id="txt4"></p>
+     <p id="txt5"></p>
+    <p id="txt6"></p>
+     <p id="txt7"></p>
+   
+
+<button id="fulldate" onclick="getDate()">Select date</button>
+
+<div onload = "document.innerHTML(dateReturned) = dateReturned">
+</div>
+<div id="addtask" id="dimmer" style="display:block">    
+<div class="formelement3">
+    <h2 id = "Essentials" style="background-color: #efefef; text-align: center; font-family: Trebuchet MS;" onchange="newessential()">  <B> Select an Essential: </B></h2>
+    <form>
+        <select id="EssentialsList" table-layout=fixed style="font-size: 18px;  border-width: 1px; max-width: 100%; font-family: Trebuchet MS;" onchange="newessential()">
+                <option value="" selected>Select an Essential</option>
+                <option value="E1">Background for Practice</option>
+                <option value="E2">Organizational and Systems Leadership</option>
+                <option value="E3">Quality Improvement and Safety</option>
+                <option value="E4">Translating and Integrating Scholarship into Practice</option>
+                <option value="E5">Informatics and Healthcare Technologies </option>
+                <option value="E6">Health Policy and Advocacy</option>
+                <option value="E7">Interprofessional Collaboration for Improving Patient and Population Health Outcomes</option>
+                <option value="E8">Clinical Prevention and Population Health for Improving Health</option>
+                <option value="E9">Master’s-Level Nursing Practice</option>
+        </select>
+</form>
+    </div>
+
+<div class="formelements" style="display:block; text-align: center">
+        <h2 id = "Hours" style="background-color: #efefef; text-align: center;font-family: Trebuchet MS;">  <B> Select Hours: </B></h2>
+    <form>
+        <select id="HR" style="font-size: 18px; width:30%; border-width: 1px;font-family: Trebuchet MS;" onchange="newhour()">
+             <option value="" selected>Hours</option>
+                <option value="0" id="0hour">0</option>
+                <option value="1" id="1hour">1</option>
+                <option value="2" id="2hour">2</option>
+                <option value="3" id="3hour">3</option>
+                <option value="4" id="4hour">4</option>
+                <option value="5" id="5hour">5</option>
+                <option value="6" id="6hour">6</option>
+                <option value="7" id="7hour">7</option>
+                <option value="8" id="8hour">8</option>
+                <option value="9" id="9hour">9</option>
+                <option value="10" id="10hour">10</option>
+                <option value="11" id="11hour">11</option>
+                <option value="12" id="12hour">12</option>
+        </select>
+        <select id="MIN" style="font-size: 18px; width: 30%;  border-width: 1px;font-family: Trebuchet MS;"  onchange="newminute()">
+                <option value="" selected>Minutes</option>
+                <option value="00" id="0minutes">00</option>
+                <option value="30" id="30minutes">30</option>
+        </select>
+</form>
+    </div>
+    
+    <h2 id = "Target Activity" style="background-color: #efefef; text-align: center; font-family: Trebuchet MS;">  <B> Select Target Activity: </B></h2>
+   
+<div id="Task" class="tabcontent">
+
+<div class="formElement3">
+	<h3> <button id="next2" onclick="onclick1(1)"><B>Click here to select your target activity  > </B></button> </h3>
+    <textarea style="width:100%;" id="final_target" rows=10 readonly></textarea>
+</div>
+
+
+<!--    
+<div class="formElement3">
+	<h3> <button id="TargetActivityPg1" onclick="openActivity1()"><B> TARGET ACTIVITY  > </B></button> </h3>
+	<textarea style="width:100%;" rows=10></textarea>
+</div>
+-->
+    </div>
+    </div>
+    <div id="addtask1">    
+<div class="formelement3">
+    <form>
+       <select id="EssentialsList1" table-layout=fixed style="font-size: 18px;  border-width: 1px; max-width: 100%; font-family: Trebuchet MS;" onchange="newessential()">
+                <option value="" selected>Select an Essential</option>
+                <option value="E1">Background for Practice</option>
+                <option value="E2">Organizational and Systems Leadership</option>
+                <option value="E3">Quality Improvement and Safety</option>
+                <option value="E4">Translating and Integrating Scholarship into Practice</option>
+                <option value="E5">Informatics and Healthcare Technologies </option>
+                <option value="E6">Health Policy and Advocacy</option>
+                <option value="E7">Interprofessional Collaboration for Improving Patient and Population Health Outcomes</option>
+                <option value="E8">Clinical Prevention and Population Health for Improving Health</option>
+                <option value="E9">Master’s-Level Nursing Practice</option>
+        </select>
+</form>
+    </div>
+
+<div class="formelements" style="display:block; text-align: center">
+        <h2 id = "Hours" style="background-color: #efefef; text-align: center;font-family: Trebuchet MS;">  <B> Select Hours: </B></h2>
+    <form>
+        <select id="HR1" style="font-size: 18px; width:30%; border-width: 1px;font-family: Trebuchet MS;" onchange="newhour()">
+             <option value="" selected>Hours</option>
+                <option value="0" id="0hour1">0</option>
+                <option value="1" id="1hour1">1</option>
+                <option value="2" id="2hour1">2</option>
+                <option value="3" id="3hour1">3</option>
+                <option value="4" id="4hour1">4</option>
+                <option value="5" id="5hour1">5</option>
+                <option value="6" id="6hour1">6</option>
+                <option value="7" id="7hour1">7</option>
+                <option value="8" id="8hour1">8</option>
+                <option value="9" id="9hour1">9</option>
+                <option value="10" id="10hour1">10</option>
+                <option value="11" id="11hour1">11</option>
+                <option value="12" id="12hour1">12</option>
+        </select>
+        <select name="MIN" style="font-size: 18px; width: 30%;  border-width: 1px;font-family: Trebuchet MS;">
+                <option value="" selected>Minutes</option>
+                <option value="00" id="0minutes">00</option>
+                <option value="30" id="30minutes">30</option>
+        </select>
+</form>
+    </div>
+    
+    <h2 id = "Target Activity" style="background-color: #efefef; text-align: center; font-family: Trebuchet MS;">  <B> Select Target Activity: </B></h2>
+   
+<div id="Task" class="tabcontent">
+
+<div class="formElement3">
+	<h3> <button id="next2" onclick="onclick1(2)"><B>Click here to select your target activity  > </B></button> </h3>
+    <textarea style="width:100%;" id="final_target2" rows=10 readonly></textarea>
+</div>
+
+
+<!--    <div class="formElement3">
+	<h3> <button id="TargetActivityPg1" onclick="openActivity1()"><B> TARGET ACTIVITY  > </B></button> </h3>
+	<textarea style="width:100%;" rows=10></textarea>
+</div>
+-->
+    </div>
+    </div>
+    <div class="wrapper">
+        <button onclick="addtask(true)" id="next4">    <h2>Submit</h2>    </button></div>
+
+    </div>
+    </div>
+    
+    
+    </div>
+<div id="target_activity"><br>
+    <button id="TargetActivityPg1Back" onclick="onclick2()"><B> < Go back </B></button> </h3>
+        <table id="table1">
+    	<h2> Target Activity </h2>
+    
+	<tr>
+		<th> Select Activity</th>
+	</tr>
+   
+	<tr><td><input type="radio" name="target" id="1" value="Interview a member of quality improvement department"> Interview a member of quality improvement department<br></td></tr>
+	<tr><td><input type="radio" name="target" id="2" value="Meet with member of risk management team"> Meet with member of risk management team<br></td></tr>
+	<tr><td><input type="radio" name="target" id="3" value=" Review quality reports and metrics"> Review quality reports and metrics<br></td></tr>
+	<tr><td><input type="radio" name="target" id="4" value="Evaluate your competence with informatics."> Evaluate your competence with informatics.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="5" value="Speak with nurse informaticist, system analyst, or IT department regarding reports."> Speak with nurse informaticist, system analyst, or IT department regarding reports.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="6" value="Identify types of clinical decision support (CDS)."> Identify types of clinical decision support (CDS).<br></td></tr>
+	<tr><td><input type="radio" name="target" id="7" value="Conduct a journal club to critically appraise the research evidence."> Conduct a journal club to critically appraise the research evidence.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="8" value="Meet with nursing leadership to write an EBP vision statement."> Meet with nursing leadership to write an EBP vision statement.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="9" value="Meet with nursing leadership to discuss practice issues."> Meet with nursing leadership to discuss practice issues.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="10" value="Meet with nursing administrators to identify barriers to healthy follow-up care."> Meet with nursing administrators to identify barriers to healthy follow-up care.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="11" value="Develop a communication plan that addresses the needs of key stakeholders in relation to the CNL role."> Develop a communication plan that addresses the needs of key stakeholders in relation to the CNL role.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="12" value="Attend a new employee orientation session with senior leadership focusing on mission, values, and expectations from staff."> Attend a new employee orientation session with senior leadership focusing on mission, values, and expectations from staff.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="13" value="Analyze data and infection control principles in collaboration with the with the infectious disease coordinator."> Analyze data and infection control principles in collaboration with the with the infectious disease coordinator.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="14" value="Review preparedness plans with the disaster management team"> Review preparedness plans with the disaster management team<br></td></tr>
+	<tr><td><input type="radio" name="target" id="15" value="Conduct a microsystem analysis using a quality improvement process."> Conduct a microsystem analysis using a quality improvement process.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="16" value="Assess human and physical resource, perform a gap analysis, and communicate needs to stakeholders."> Assess human and physical resource, perform a gap analysis, and communicate needs to stakeholders.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="17" value="Identify a gap in care for at-risk population, compare existing to best practices, lead a practice change, and evaluate the impact."> Identify a gap in care for at-risk population, compare existing to best practices, lead a practice change, and evaluate the impact.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="18" value="Present recommendations for change to appropriate audiences."> Present recommendations for change to appropriate audiences.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="19" value="Communicate ideas regarding a practice issue or proposed policy change in an informal setting."> Communicate ideas regarding a practice issue or proposed policy change in an informal setting.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="20" value="Use patient information system data, assess data, design and implement a change in patient care."> Use patient information system data, assess data, design and implement a change in patient care.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="21" value="Evaluate practices and outcomes of care for potential cost savings; Use graphics to present idea to interdisciplinary team."> Evaluate practices and outcomes of care for potential cost savings; Use graphics to present idea to interdisciplinary team.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="22" value="Conduct an assessment of a patient cohort with complex health problems, identify needs, and develop plans to improve patient outcomes."> Conduct an assessment of a patient cohort with complex health problems, identify needs, and develop plans to improve patient outcomes.<br></td></tr>
+	<tr><td><input type="radio" name="target" id="23" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Conduct a health education class for a patient or staff cohort and evaluate the class.<br></td></tr>
+    <tr><td><input type="radio" name="target" id="24" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Other.<br></td></tr>
+	
+	<tr><td>Other:(If selected Other, please enter the Target below:)<textarea rows="3" style="width:100%;" id="Other"> 
+        </textarea></td></tr>
+</table>
+    <br>
+    <button id="next3" onclick="onclick3()">   Next >  </button>
+</div>
+    <div id="target_activity2">
+<button class="button button1" onclick="openActivityPg1()"><B> < </B></button> </h3>
+<header>
+	<h2> Target Activity </h22>
+</header>
+<p align="left">
+Follow up Explanation: <textarea rows="15" style="width:100%;" id="explain">  </textarea>
+</p>
+<br>
+<p>
+Prompts:<br>
+1. What were the methods, tools, and measurement techniques used in the activity?<br>
+2. What were the results or next steps?<br>
+3. How does the role of the CNL impact the activity?<br>
+</p>
+
+<div class="wrapper">
+	<p align="right">
+		<br>
+        <button id="next3" onclick="onclick4()" align=right>    <H4>DONE</H4>    </button></div>
+</div>
+
+    
+    <script src="task.js"></script>
+    <script>
+         
+        document.getElementById('EssentialsList').value = 'E1';
+        $('#addtask1').hide();
+        $('#target_activity').hide();
+        $('#target_activity2').hide();
+        
+        function openActivityPg1(){
+            $('#items').hide();
+             $('#target_activity').show();
+        $('#target_activity2').hide();
+        }
+        var alpha;
+        var a;
+    function onclick1(a){
+        document.getElementById("txt1").innerHTML=a;
+        alpha=a;
+        $('#items').hide();
+        $('#target_activity').show();
+        
+    }
+         function onclick2(){
+        
+        $('#items').show();
+        $('#target_activity').hide();
+        
+    }
+        var account="Please enter a Target Activity.";
+        var account_no="1";
+         function onclick3(){
+        
+        $('#items').hide();
+             $('#target_activity').hide();
+        $('#target_activity2').show();
+             if(document.getElementById('1').checked) {
+  account = document.getElementById("1").value;
+                 account_no="1";
+}else if(document.getElementById('2').checked) {
+  account = document.getElementById("2").value;
+    account_no="2";
+}
+        else if(document.getElementById('3').checked) {
+  account = document.getElementById("3").value;
+            account_no="3";
+}
+        else if(document.getElementById('4').checked) {
+  account = document.getElementById("4").value;
+            account_no="4";
+}
+        else if(document.getElementById('5').checked) {
+  account = document.getElementById("5").value;
+            account_no="5";
+}
+        else if(document.getElementById('6').checked) {
+  account = document.getElementById("6").value;
+            account_no="6";
+}
+        else if(document.getElementById('7').checked) {
+  account = document.getElementById("7").value;
+            account_no="7";
+}
+        else if(document.getElementById('8').checked) {
+  account = document.getElementById("8").value;
+            account_no="8";
+}
+        else if(document.getElementById('9').checked) {
+  account = document.getElementById("9").value;
+            account_no="9";
+}
+        else if(document.getElementById('10').checked) {
+  account = document.getElementById("10").value;
+            account_no="10";
+}
+        else if(document.getElementById('11').checked) {
+  account = document.getElementById("11").value;
+            account_no="11";
+}
+        else if(document.getElementById('12').checked) {
+  account = document.getElementById("12").value;
+            account_no="12";
+}
+        else if(document.getElementById('13').checked) {
+  account = document.getElementById("13").value;
+            account_no="13";
+}
+        else if(document.getElementById('14').checked) {
+  account = document.getElementById("14").value;
+            account_no="14";
+}
+        else if(document.getElementById('15').checked) {
+  account = document.getElementById("15").value;
+            account_no="15";
+}
+        else if(document.getElementById('16').checked) {
+  account = document.getElementById("16").value;
+            account_no="16";
+}
+        else if(document.getElementById('17').checked) {
+  account = document.getElementById("17").value;
+            account_no="17";
+}
+        else if(document.getElementById('18').checked) {
+  account = document.getElementById("18").value;
+            account_no="18";
+}
+        else if(document.getElementById('19').checked) {
+  account = document.getElementById("19").value;
+            account_no="19";
+}
+        else if(document.getElementById('20').checked) {
+  account = document.getElementById("20").value;
+            account_no="20";
+        }
+        else if(document.getElementById('21').checked) {
+  account = document.getElementById("21").value;
+            account_no="21";
+}
+        else if(document.getElementById('22').checked) {
+  account = document.getElementById("22").value;
+            account_no="22";
+}
+        else if(document.getElementById('23').checked) {
+  account = document.getElementById("23").value;
+            account_no="23";
+}
+        else if(document.getElementById('24').checked){
+  account = document.getElementById("Other").value;
+            
+}
+             if(alpha=="1")
+                 {
+       document.getElementById("final_target").value= account;
+       document.getElementById("txt5").innerHTML=account_no;
+                 }
+             else if(alpha=="2")
+                 {
+                      document.getElementById("final_target2").value= account;
+       document.getElementById("txt5").innerHTML=account_no;
+                 }
+    }
+        var explain;
+        function onclick4()
+        {
+            
+        $('#items').show();
+        $('#target_activity2').hide();
+       explain=document.getElementById("explain").value;
+            if(alpha=="1")
+                {
+            document.getElementById("final_target").value= account + " \nExplanation: " +explain;
+                }
+            else if(alpha=="2"){
+                document.getElementById("final_target2").value= account + " \nExplanation: " +explain;
+            }
+            
+    }
+        
+        function checking(checker)
+        {
+            document.getElementById("txt3").innerHTML="true";
+        }
+        
+        function addtask(bool)
+        {
+           
+             var text = $('#txt1').text();
+             document.getElementById("txt4").innerHTML= text;
+       $.ajax({
+    url: "addtask.php",
+    data: { 
+      "date": text,
+      "hours": total,
+      "target": account_no,
+      "ess": ess,
+      "explain": explain
+    
+      
+    },
+    cache: false,
+    type: "POST",
+    success: function(response) {
+     document.getElementById("txt").innerHTML= response;
+    },
+    error: function(xhr) {
+      document.getElementById("txt").innerHTML= "Error";
+    }
+});
+            
+            $('#addtask1').show();
+            $("#addtask").addClass("disabledbutton");
+            if(alpha=="2")
+                {
+            $("#addtask1").addClass("disabledbutton");
+                    $("#next4").addClass("disabledbutton");
+                }
+            
+        }
+        $('a').css("background-color","#e7e7e7");
+        $('a').on('click', function(){$('a').css("background-color","#e7e7e7");});
+        $('a').on('click', function(){$(this).css("background-color","yellow");});
+        var hours;
+        var hrs=0;
+        var minutes;
+        var min=0;
+        var total;
+        function newhour(){
+        hours=document.getElementById('HR').selectedOptions[0].text;
+      document.getElementById("txt4").innerHTML= hours;
+            if(hours=="0")
+                {
+                    hrs=0;
+                }
+            else if(hours=="1")
+                {
+                 hrs=1;   
+                }
+            else if(hours=="2")
+                {
+                 hrs=2;   
+                }
+            else if(hours=="3")
+                {
+                    hrs=3;
+                }
+            else if(hours=="4")
+                {
+                    hrs=4;
+                }
+            else if(hours=="5")
+                {
+                    hrs=5;
+                }
+            else if(hours=="6")
+                {
+                    hrs=6;
+                }
+            else if(hours=="7")
+                {
+                    hrs=7;
+                }
+            else if(hours=="8")
+                {
+                    hrs=8;
+                }
+            else if(hours=="9")
+                {
+                    hrs=9;
+                }
+            else if(hours=="10")
+                {
+                    hrs=10;
+                }
+            else if(hours=="11")
+                {
+                    hrs=11;
+                }
+            else if(hours=="12")
+                {
+                    hrs=12;
+                }
+            total=hrs+min;
+            document.getElementById("txt6").innerHTML= total;
+        }
+        
+        function newminute(){
+        minutes=document.getElementById('MIN').selectedOptions[0].text;
+            if(minutes == "00")
+                {
+                    min=0;
+                }
+            else{
+                 min=0.5;
+            }
+        document.getElementById("txt5").innerHTML= min;
+            
+            total=hrs+min;
+            document.getElementById("txt6").innerHTML= total;
+        }
+        var Essential="E1";
+        var ess=0;
+        function newessential()
+        {
+            Essential=document.getElementById('EssentialsList').selectedOptions[0].value;
+            if(Essential=="E1")
+                {
+                    ess=1;
+                }
+            else if(Essential=="E2"){
+                ess=2;
+            }
+            else if(Essential=="E3"){
+                ess=3;
+            }
+            else if(Essential=="E4"){
+                ess=4;
+            }
+            else if(Essential=="E5"){
+                ess=5;
+            }
+            else if(Essential=="E6"){
+                ess=6;
+            }
+            else if(Essential=="E7"){
+                ess=7;
+            }
+            else if(Essential=="E8"){
+                ess=8;
+            }
+            else if(Essential=="E9"){
+                ess=9;
+            }
+            else{
+                
+            }
+            document.getElementById("txt7").innerHTML= ess;
+        }
+    </script>
+</body>
+>>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
+</html>

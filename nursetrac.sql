@@ -9,7 +9,13 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+<<<<<<< HEAD
 
+=======
+CREATE DATABASE nursetrac;
+
+USE nursetrac;
+>>>>>>> 09e03c23c2fdde9321a19beabbbb85f314f749d1
 --
 -- Database: `nursetrac`
 --
