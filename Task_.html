@@ -384,8 +384,8 @@ h3{
      <p id="txt5"></p>
     <p id="txt6"></p>
      <p id="txt7"></p>
-    <p id="txt10"></p>
 
+    <p id="txt10"></p>
    
 
 <button id="fulldate" onclick="getDate()">Select date</button>
@@ -534,6 +534,7 @@ h3{
 
   <div id="target_activity"><br> 
 
+
     <button id="TargetActivityPg1Back" onclick="onclick2()"><B> < Go back </B></button> </h3>
         <table id="table1">
     	<h2> Target Activity </h2>
@@ -601,7 +602,6 @@ Prompts:(These are references for your explanation, above.)<br>
     </div>
     
     
-
     <script>
         $('#txt4').hide();
         $('#txt5').hide();
@@ -819,12 +819,12 @@ Prompts:(These are references for your explanation, above.)<br>
                 }
             else if(hours=="1")
                 {
-
                     hrs=1;   
                 }
             else if(hours=="2")
                 {
                     hrs=2;   
+
                 }
             else if(hours=="3")
                 {
@@ -922,6 +922,7 @@ Prompts:(These are references for your explanation, above.)<br>
             }
             document.getElementById("txt7").innerHTML= ess;
         }
+
         
          function getDate(){
         var value=year+"-"+month+"-"+day;
@@ -975,6 +976,4 @@ Prompts:(These are references for your explanation, above.)<br>
     </script>
     <script src="task.js"></script>
 </body>
-    
-
 </html>

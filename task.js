@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
- 
-   
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
->>>>>>> 09e03c23c2fdde9321a19beabbbb85f314f749d1
 function openTab1()
     {
         window.location.assign("Overview.html");
@@ -23,14 +15,17 @@ function openActivity1()
 	{
 		window.location.assign("ActivityPg1.html");
 	}
-
+function addTask()
+	{
+		//To be filled
+        //Display msg that task successfully added
+	}
         var today = new Date();
         var day = today.getDay();
         day=day+1;
         var month = today.getMonth(); //January is 0!'
         month=month+1;
         var year=today.getFullYear();
-
                 if(month=="1")
                {
             document.getElementById("month12").innerHTML="January";
@@ -197,54 +192,20 @@ function openActivity1()
             day=day12;
            // document.getElementById("txt").innerHTML=day;
         }
-<<<<<<< HEAD
    
-=======
-    function getDate(){
-        var value=year+"-"+month+"-"+day;
-        document.getElementById("txt1").innerHTML=value;
-<<<<<<< HEAD
-=======
-        var prevtext=$('#txt1').text();
-         $.ajax({
-    url: "prevtask.php",
-    data: { 
-      "date": prevtext
-      
-    
-      
-    },
-    cache: false,
-    type: "POST",
-    success: function(response) {
-     document.getElementById("txt2").innerHTML= response;
-    },
-    error: function(xhr) {
-      document.getElementById("txt2").innerHTML= "Error";
-    }
-});
-        
->>>>>>> 7577f4590c353b2cf3a378917d008020065e1823
-    }
->>>>>>> 09e03c23c2fdde9321a19beabbbb85f314f749d1
         function daychange()
         {
             //document.getElementById("txt").innerHTML="Changing the days"; 
-            
             var value=month+"/"+day+"/"+year;
 	         startDay = new Date(year, month-1, 1).getDay().toString();
-            
              startMonth = new Date(year, month-1, 1).getMonth();
-            SM=startMonth%2;
-             
-            document.getElementById("txt10").innerHTML=startMonth;
              /*document.getElementById("txt").innerHTML=startDay;*/
              /*document.getElementById("txt1").innerHTML=startMonth%2;*/
-             if(SM === 0 || startMonth=="0")
+             if(startMonth%2!=0)
                  {
                      /*document.getElementById("txt2").innerHTML="31 days";*/
                      var totaldays=31;
-                     if(startDay ==1)
+                     if(startDay==1)
             { // 31 and 1
             document.getElementById("para1").innerText="";
             document.getElementById("para2").innerText="1";
@@ -835,15 +796,19 @@ function openActivity1()
             document.getElementById("para42").innerText="";
                 }
                  }
-              else if(SM % 2 != 0)
+              else if(startMonth%2==0)
                   
                  {
                      /*document.getElementById("txt2").innerHTML="30 days";*/
                      var totaldays=30;
             if(startDay==1)
             { // 30 and 1
-            
-             // 31 and 1
+            if(startMonth%2!=0)
+                 {
+                     /*document.getElementById("txt2").innerHTML="31 days";*/
+                     var totaldays=31;
+                     if(startDay==1)
+            { // 31 and 1
             document.getElementById("para1").innerText="";
             document.getElementById("para2").innerText="1";
             document.getElementById("para2").onclick = function () { date(1);return false; };
@@ -906,9 +871,9 @@ function openActivity1()
             document.getElementById("para31").onclick = function () { date(30);return false; };
             document.getElementById("para31").innerText="30";
             document.getElementById("para32").onclick = function () { date(31);return false; };
-            document.getElementById("para32").innerText="";
+            document.getElementById("para32").innerText="31";
             
-            
+            }
             }
             else if(startDay==0)
             { // 30 and 0
@@ -1450,3 +1415,4 @@ function openActivity1()
     
     
         
+}
