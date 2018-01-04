@@ -8,7 +8,6 @@ div.tab
     {
         
         margin-left: 1%;
-        
     }
     div.tab button {
     background-color: inherit;
@@ -85,8 +84,7 @@ div.tab
         }
        
         #para1:hover , #para2:hover , #para3:hover , #para4:hover , #para5:hover , #para6:hover , #para7:hover , #para8:hover , #para9:hover , #para10:hover, #para11:hover , #para12:hover , #para13:hover , #para14:hover , #para15:hover , #para16:hover , #para17:hover , #para18:hover , #para19:hover , #para20:hover, #para21:hover , #para22:hover , #para23:hover , #para24:hover , #para25:hover , #para26:hover , #para27:hover , #para28:hover , #para29:hover , #para30:hover, #para31:hover , #para32:hover , #para33:hover , #para34:hover , #para35:hover , #para36:hover , #para37:hover , #para38:hover , #para39:hover , #para40:hover , #para41:hover , #para42:hover{
-            background-color:#3b5998;
-            color:white;
+            color:#74AFAD;
         }
        
         
@@ -126,14 +124,7 @@ div.tab
 }
     </style>
     <script async src="//jsfiddle.net/chafg/105/embed/"></script>
-    <script type="text/javascript">
-    var dateReturned = document.getElementById("calFrame").contentWindow.document.getElementById("selected_date").value;
-        function showIFrame() {
-    var myIframe = $('#calFrame');
-    myIframe.attr('src').val();
-    myIframe.show();
-}
-</script>
+
   
     <script>
 function toggleField(hideObj,showObj){
@@ -273,7 +264,7 @@ h3{
  href="#" onclick="datem(1);return false;">&#10097; &#10097;</a></li>
     <li>
         <p id="month12"></p>
-        <p id="year12">2017</p>
+        <p id="year12">2018</p>
     </li>
   </ul>
 </div>
@@ -390,6 +381,7 @@ h3{
      <p id="txt5"></p>
     <p id="txt6"></p>
      <p id="txt7"></p>
+    <p id="txt10"></p>
    
 
 <button id="fulldate" onclick="getDate()">Select date</button>
@@ -410,7 +402,7 @@ h3{
                 <option value="E6">Health Policy and Advocacy</option>
                 <option value="E7">Interprofessional Collaboration for Improving Patient and Population Health Outcomes</option>
                 <option value="E8">Clinical Prevention and Population Health for Improving Health</option>
-                <option value="E9">Master’s-Level Nursing Practice</option>
+                <option value="E9">Master's-Level Nursing Practice</option>
         </select>
 </form>
     </div>
@@ -459,8 +451,10 @@ h3{
 </div>
 -->
     </div>
+     <div class="wrapper">
+        <button onclick="addtask(true)" id="next4">    <h2>Submit</h2>    </button></div>
     </div>
-    <div id="addtask1">    
+   <!-- <div id="addtask1">    
 <div class="formelement3">
     <form>
        <select id="EssentialsList1" table-layout=fixed style="font-size: 18px;  border-width: 1px; max-width: 100%; font-family: Trebuchet MS;" onchange="newessential()">
@@ -473,7 +467,7 @@ h3{
                 <option value="E6">Health Policy and Advocacy</option>
                 <option value="E7">Interprofessional Collaboration for Improving Patient and Population Health Outcomes</option>
                 <option value="E8">Clinical Prevention and Population Health for Improving Health</option>
-                <option value="E9">Master’s-Level Nursing Practice</option>
+                <option value="E9">Master's-Level Nursing Practice</option>
         </select>
 </form>
     </div>
@@ -518,19 +512,18 @@ h3{
 <!--    <div class="formElement3">
 	<h3> <button id="TargetActivityPg1" onclick="openActivity1()"><B> TARGET ACTIVITY  > </B></button> </h3>
 	<textarea style="width:100%;" rows=10></textarea>
-</div>
--->
+</div> //
+
     </div>
-    </div>
-    <div class="wrapper">
-        <button onclick="addtask(true)" id="next4">    <h2>Submit</h2>    </button></div>
+    </div> -->
+   
 
     </div>
     </div>
     
     
     </div>
-<div id="target_activity"><br>
+  <div id="target_activity"><br> 
     <button id="TargetActivityPg1Back" onclick="onclick2()"><B> < Go back </B></button> </h3>
         <table id="table1">
     	<h2> Target Activity </h2>
@@ -568,19 +561,21 @@ h3{
         </textarea></td></tr>
 </table>
     <br>
-    <button id="next3" onclick="onclick3()">   Next >  </button>
-</div>
+       <button id="next3" onclick="onclick3()">   Next >  </button>
+    </div>
+
+   
     <div id="target_activity2">
-<button class="button button1" onclick="openActivityPg1()"><B> < </B></button> </h3>
+        <button class="button button1" onclick="openActivityPg1()"> Go back </button>
 <header>
-	<h2> Target Activity </h22>
+	<h2> Target Activity </h2>
 </header>
 <p align="left">
 Follow up Explanation: <textarea rows="15" style="width:100%;" id="explain">  </textarea>
 </p>
 <br>
 <p>
-Prompts:<br>
+Prompts:(These are references for your explanation, above.)<br>
 1. What were the methods, tools, and measurement techniques used in the activity?<br>
 2. What were the results or next steps?<br>
 3. How does the role of the CNL impact the activity?<br>
@@ -590,13 +585,14 @@ Prompts:<br>
 	<p align="right">
 		<br>
         <button id="next3" onclick="onclick4()" align=right>    <H4>DONE</H4>    </button></div>
-</div>
-
+    </div>
     
-    <script src="task.js"></script>
+    
     <script>
-         
-        document.getElementById('EssentialsList').value = 'E1';
+        $('#txt4').hide();
+        $('#txt5').hide();
+        $('#txt6').hide();
+        $('#txt7').hide();
         $('#addtask1').hide();
         $('#target_activity').hide();
         $('#target_activity2').hide();
@@ -609,7 +605,7 @@ Prompts:<br>
         var alpha;
         var a;
     function onclick1(a){
-        document.getElementById("txt1").innerHTML=a;
+        
         alpha=a;
         $('#items').hide();
         $('#target_activity').show();
@@ -755,7 +751,6 @@ Prompts:<br>
         {
             document.getElementById("txt3").innerHTML="true";
         }
-        
         function addtask(bool)
         {
            
@@ -793,7 +788,9 @@ Prompts:<br>
         }
         $('a').css("background-color","#e7e7e7");
         $('a').on('click', function(){$('a').css("background-color","#e7e7e7");});
-        $('a').on('click', function(){$(this).css("background-color","yellow");});
+        $('a').on('click', function(){$('a').css("color","#000000");});
+        $('a').on('click', function(){$(this).css("background-color","#558C89");});
+        $('a').on('click', function(){$(this).css("color","#FFFFFF");});
         var hours;
         var hrs=0;
         var minutes;
@@ -808,11 +805,11 @@ Prompts:<br>
                 }
             else if(hours=="1")
                 {
-                 hrs=1;   
+                    hrs=1;   
                 }
             else if(hours=="2")
                 {
-                 hrs=2;   
+                    hrs=2;   
                 }
             else if(hours=="3")
                 {
@@ -910,6 +907,57 @@ Prompts:<br>
             }
             document.getElementById("txt7").innerHTML= ess;
         }
+        
+         function getDate(){
+        var value=year+"-"+month+"-"+day;
+        document.getElementById("txt1").innerHTML=value;
+        $.ajax({
+    url: "prevtask.php",
+    data: { 
+      "date": value
+    },
+    cache: false,
+    type: "POST",
+    success: function(response) {
+     var task = JSON.parse(response);
+     document.getElementById("txt10").innerHTML= task.bool;
+        if (task.bool === "true")
+            {
+                $("#addtask").addClass("disabledbutton");
+                EList="E"+task.EssentialID;
+                $('#EssentialsList').val(EList);
+                Target=document.getElementById(task.TargetID).value;
+                document.getElementById('final_target').value= Target + " \nExplanation: " +task.Explanation;
+                time=task.Hours;
+                timeHR=Math.floor(time);
+                $('#HR').val(timeHR);
+                if(time%1 == 0)
+                    {
+                         $('#MIN').val(00);
+                    }
+                else
+                    {
+                         $('#MIN').val(30);
+                    }
+                
+                
+            }
+        if (task.bool === "false")
+        {
+            document.getElementById("txt10").innerHTML="here";
+           $("#addtask").removeClass("disabledbutton");
+        } 
+    
+        
+    },
+    error: function(xhr) {
+      document.getElementById("txt10").innerHTML= "Error";
+     
+    }
+});
+            
+    }
     </script>
+    <script src="task.js"></script>
 </body>
 </html>
