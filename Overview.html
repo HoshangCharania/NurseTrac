@@ -80,6 +80,9 @@
         width:33%;
         margin-left: 66%;
     }
+    #totalhours1{
+        margin-left: 66%;
+    }
 </style>
      
 <body>
@@ -135,7 +138,7 @@
         </select>
     </div>
 
-
+<div id="totalhours"><p id="totalhours1">Number of hours completed:</p></div>
   <div id="curve_chart" class="canvas1"></div>
 
     
@@ -190,7 +193,20 @@
     <script src="jquery-3.2.1.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-
+    $.ajax({
+    url: "totalhours.php",
+    data: { 
+        
+    },
+    cache: false,
+    type: "POST",
+    success: function(response) {
+     document.getElementById("totalhours1").innerHTML= response;
+    },
+    error: function(xhr) {
+      document.getElementById("totalhours1").innerHTML= "Error";
+    }
+});
          google.charts.load('current', {
       'packages': ['corechart']
     });
@@ -451,7 +467,8 @@
 
     function openEssential(){
         var showEssen =document.getElementById("showEssen");
-        if(showEssen.style.display=="none"){
+        if(showEssen.style.display=="none")
+        {
             showEssen.style.display="";
             // showEssen.style.display="inline";
         }else{
@@ -470,6 +487,7 @@ function openTab3()
     {
         window.location.assign("Profile.html");
     }
+         
     </script>
 </body>
 </html>

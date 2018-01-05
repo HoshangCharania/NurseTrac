@@ -197,11 +197,13 @@ function addTask()
         {
             //document.getElementById("txt").innerHTML="Changing the days"; 
             var value=month+"/"+day+"/"+year;
+             
 	         startDay = new Date(year, month-1, 1).getDay().toString();
              startMonth = new Date(year, month-1, 1).getMonth();
              /*document.getElementById("txt").innerHTML=startDay;*/
              /*document.getElementById("txt1").innerHTML=startMonth%2;*/
-             if(startMonth%2!=0)
+             document.getElementById("txt10").innerHTML=startMonth%2
+             if(startMonth%2==0 || startMonth==0)
                  {
                      /*document.getElementById("txt2").innerHTML="31 days";*/
                      var totaldays=31;
@@ -796,19 +798,14 @@ function addTask()
             document.getElementById("para42").innerText="";
                 }
                  }
-              else if(startMonth%2==0)
+              else if(startMonth%2!=0)
                   
                  {
                      /*document.getElementById("txt2").innerHTML="30 days";*/
                      var totaldays=30;
             if(startDay==1)
             { // 30 and 1
-            if(startMonth%2!=0)
-                 {
-                     /*document.getElementById("txt2").innerHTML="31 days";*/
-                     var totaldays=31;
-                     if(startDay==1)
-            { // 31 and 1
+             // 31 and 1
             document.getElementById("para1").innerText="";
             document.getElementById("para2").innerText="1";
             document.getElementById("para2").onclick = function () { date(1);return false; };
@@ -873,7 +870,7 @@ function addTask()
             document.getElementById("para32").onclick = function () { date(31);return false; };
             document.getElementById("para32").innerText="31";
             
-            }
+            
             }
             else if(startDay==0)
             { // 30 and 0
@@ -1412,7 +1409,6 @@ function addTask()
         }
         
   
-    
+
     
         
-}

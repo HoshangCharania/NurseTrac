@@ -12,7 +12,7 @@ if (!$mysqli)
 $csv  = $exp_table . "-" . date('d-m-Y-his') . '.csv';
 $file = fopen($csv, 'w');
 // Get the table
-if (!$mysqli_result = mysqli_query($mysqli, "SELECT * FROM {$exp_table} WHERE email='hok14@pitt.edu'"))
+if (!$mysqli_result = mysqli_query($mysqli, "SELECT * FROM {$exp_table} ORDER BY email"))
     printf("Error: %s\n", $mysqli->error);
     // Get column names 
     while ($column = mysqli_fetch_field($mysqli_result)) {
