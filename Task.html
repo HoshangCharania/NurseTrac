@@ -565,10 +565,10 @@ h3{
 	<tr><td><input type="radio" name="target" id="21" value="Evaluate practices and outcomes of care for potential cost savings; Use graphics to present idea to interdisciplinary team."> Evaluate practices and outcomes of care for potential cost savings; Use graphics to present idea to interdisciplinary team.<br></td></tr>
 	<tr><td><input type="radio" name="target" id="22" value="Conduct an assessment of a patient cohort with complex health problems, identify needs, and develop plans to improve patient outcomes."> Conduct an assessment of a patient cohort with complex health problems, identify needs, and develop plans to improve patient outcomes.<br></td></tr>
 	<tr><td><input type="radio" name="target" id="23" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Conduct a health education class for a patient or staff cohort and evaluate the class.<br></td></tr>
-    <tr><td><input type="radio" name="target" id="24" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Other.<br></td></tr>
+<!--    <tr><td><input type="radio" name="target" id="24" value="Conduct a health education class for a patient or staff cohort and evaluate the class."> Other.<br></td></tr>
 	
 	<tr><td>Other:(If selected Other, please enter the Target below:)<textarea rows="3" style="width:100%;" id="Other"> 
-        </textarea></td></tr>
+        </textarea></td></tr> -->
 </table>
     <br>
 
@@ -867,18 +867,22 @@ Prompts:(These are references for your explanation, above.)<br>
                 {
                     hrs=12;
                 }
+            else
+                {
+                    hrs=0;
+                }
             total=hrs+min;
             document.getElementById("txt6").innerHTML= total;
         }
         
         function newminute(){
         minutes=document.getElementById('MIN').selectedOptions[0].text;
-            if(minutes == "00")
+            if(minutes == "30")
                 {
-                    min=0;
+                    min=0.5;
                 }
             else{
-                 min=0.5;
+                 min=0;
             }
         document.getElementById("txt5").innerHTML= min;
             

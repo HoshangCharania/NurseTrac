@@ -15,6 +15,7 @@ if ($conn->connect_error) {
  
     $email=$_POST["Email"];
     $password=$_POST["Pass"];
+    $newpassword=$_POST["NewPass"];
 $sql="SELECT email,password FROM login WHERE email='$email' AND password='$password'";
 $result=mysqli_query($conn,$sql);
 
@@ -29,11 +30,10 @@ if($count==1)
 
    {
       //  echo "yes";
-        session_start();
-        $_SESSION['email'] = $email;
-        //print_r($_SESSION['email']);
-        $_SESSION['password'] = $password;
-        echo "Login Successful- (Please press login again, if you're not redirected)";
+        $sql1="UPDATE `login` SET `password`='$newpassword' WHERE email='$email'";
+        $result1=mysqli_query($conn,$sql1);
+
+        echo "Password changed successfully for $email";
         return true;
     }
     else 
